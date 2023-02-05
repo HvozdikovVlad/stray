@@ -58,7 +58,6 @@ for day in range(365):
     if kate.alive == False:
         break
     kate.live(day)
-print(nick)
 #
 #
 #

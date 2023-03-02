@@ -1,5 +1,10 @@
 import random
+import logging
 
+logging.basicConfig(level=logging.DEBUG,
+                    filename="logs.log", filemode="a",
+                    format="We have next logging message: "
+                           "%(asctime)s:%(levelname)s-%(message)s")
 class Cat:
     def __init__(self, name="Cat"):
         self.name = name
@@ -70,14 +75,17 @@ class Human:
                 return
         if manage == "fuel":
             print("I bought fuel")
+            logging.info("I bought fuel")
             self.money -= 100
             self.car.fuel += 100
         elif manage == "food":
             print("Bought food")
+            logging.info("Bought food")
             self.money -= 50
             self.home.food += 50
         elif manage == "delicacies":
             print("Hooray! Delicious!")
+            logging.info("Hooray! Delicious!")
             self.gladness += 10
             self.satiety += 2
             self.money -= 15
@@ -110,6 +118,7 @@ class Human:
         print(f"{car_indexes:^50}", "\n")
         print(f"Fuel – {self.car.fuel}")
         print(f"Strength – {self.car.strength}")
+        logging.info(f"Strength – {self.car.strength}")
 
     def is_alive(self):
         if self.gladness < 0:

@@ -2,7 +2,7 @@ import random
 import logging
 
 logging.basicConfig(level=logging.DEBUG,
-                    filename="logs.log", filemode="a",
+                    filename="logs.log", filemode="w",
                     format="We have next logging message: "
                            "%(asctime)s:%(levelname)s-%(message)s")
 class Cat:
@@ -104,10 +104,10 @@ class Human:
     def days_indexes(self, day):
         day = f" Today the {day} of {self.name}'s life "
         print(f"{day:=^50}", "")
-        logging.info(f"{day:=^50}", "")
+        logging.info(f"{day:=^50}")
         human_indexes = self.name + "'s indexes"
-        print(f"{human_indexes:^50}", "")
-        logging.info(f"{human_indexes:^50}", "")
+        print(f"{human_indexes:^50}")
+        logging.info(f"{human_indexes:^50}")
         print(f"Money – {self.money}")
         logging.info(f"Money – {self.money}")
         print(f"Satiety – {self.satiety}")
@@ -117,15 +117,15 @@ class Human:
         print(f"Cat – {self.cat.name}")
         logging.info(f"Cat – {self.cat.name}")
         home_indexes = "Home indexes"
-        print(f"{home_indexes:^50}", "")
-        logging.info(f"{home_indexes:^50}", "")
+        print(f"{home_indexes:^50}")
+        logging.info(f"{home_indexes:^50}")
         print(f"Food – {self.home.food}")
         logging.info(f"Food – {self.home.food}")
         print(f"Mess – {self.home.mess}")
         logging.info(f"Mess – {self.home.mess}")
         car_indexes = f"{self.car.brand} car indexes"
         print(f"{car_indexes:^50}", "")
-        logging.info(f"{car_indexes:^50}", "")
+        logging.info(f"{car_indexes:^50}")
         print(f"Fuel – {self.car.fuel}")
         logging.info(f"Fuel – {self.car.fuel}")
         print(f"Strength – {self.car.strength}")
@@ -164,8 +164,7 @@ class Human:
             self.get_job()
             print(f"I don't have a job, I'm going to get a job "
                   f"{self.job.job} with salary {self.job.salary}")
-            logging.info(f"I don't have a job, I'm going to get a job "
-                         f"{self.job.job} with salary {self.job.salary}")
+            logging.info(f"I don't have a job, I'm going to get a job {self.job.job} with salary {self.job.salary}")
         self.days_indexes(day)
         dice = random.randint(1, 4)
         if self.satiety < 20:

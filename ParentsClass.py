@@ -1,17 +1,15 @@
-class Computer:
-    def __init__(self, model, *args, **kwargs):
+class Grandparents:
+    def __init__(self, age, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.model = model
-        self.memory = 128
+        self.age = age
 
-class Display:
+class Parents:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.resolution = "4k"
-class SmartPhone(Display, Computer):
+class Child:
     def print_info(self):
-        print(self.model)
+        print(self.age)
         print(self.resolution)
-        print(self.memory)
-iphone = SmartPhone(model ="Last")
-iphone.print_info()
+smartchild = Child(age ="age")
+smartchild.print_info()
